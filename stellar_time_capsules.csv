@@ -1,0 +1,101 @@
+StarSystem,StarAge (billion yrs),Metallicity (Z),PlanetCount,HabitableZonePlanets,RadiationLevel,SignalAnomaly,InfraredExcess,ChemicalAnomaly,PredictedEchoType
+Star_1,5.62,0.33,9,1,Medium,None,None,Fluorocarbons,Signal Ghosts
+Star_2,5.62,0.31,12,0,High,Weak,None,Fluorocarbons,Ruins (Megastructure)
+Star_3,0.69,1.07,3,0,Extreme,Repeating,None,Fluorocarbons,Ruins (Megastructure)
+Star_4,1.73,0.4,10,3,Medium,Weak,Weak,None,Signal Ghosts
+Star_5,5.81,1.07,4,0,Very High,Weak,Strong,Fluorocarbons,Ruins (Megastructure)
+Star_6,1.51,1.37,8,3,Very High,Repeating,Weak,Unknown gas X,Ruins (Megastructure)
+Star_7,4.12,0.41,5,1,Extreme,Repeating,Moderate,Natural O₂,Industrial Afterglow
+Star_8,9.24,0.4,11,2,Very High,Weak,Strong,Methane Spike,Silent Natural
+Star_9,4.75,0.47,1,2,Extreme,Irregular,Weak,Unknown gas Y,Silent Natural
+Star_10,2.93,0.49,6,1,Medium,Weak,Weak,None,Signal Ghosts
+Star_11,6.44,0.68,7,1,Very High,None,None,Unknown gas X,Signal Ghosts
+Star_12,7.23,0.55,9,3,Extreme,None,Weak,Methane Spike,Silent Natural
+Star_13,5.12,1.31,9,2,Very High,None,None,Unknown gas Y,Ruins (Megastructure)
+Star_14,11.82,1.17,4,1,Medium,Repeating,Weak,Unknown gas X,Silent Natural
+Star_15,3.88,1.57,9,3,Low,None,None,Industrial Gas,Industrial Afterglow
+Star_16,7.37,1.33,2,2,Very High,Weak,None,Natural O₂,Silent Natural
+Star_17,3.31,1.58,12,2,Medium,None,Moderate,CO₂ Excess,Industrial Afterglow
+Star_18,0.47,0.43,0,3,Very High,Repeating,None,Unknown gas Y,Industrial Afterglow
+Star_19,8.4,1.77,4,3,Medium,Weak,Weak,Natural O₂,Industrial Afterglow
+Star_20,11.8,0.74,1,0,Very High,None,Strong,Unknown gas Y,Ruins (Megastructure)
+Star_21,6.27,1.3,3,1,High,None,Strong,Natural O₂,Industrial Afterglow
+Star_22,3.44,1.87,10,2,Extreme,None,Strong,Natural O₂,Industrial Afterglow
+Star_23,6.82,0.54,3,3,Low,Repeating,Weak,Industrial Gas,Industrial Afterglow
+Star_24,3.53,0.8,8,3,Low,None,Moderate,None,Silent Natural
+Star_25,5.62,0.99,2,0,High,None,Strong,CO₂ Excess,Industrial Afterglow
+Star_26,11.12,1.48,1,2,Extreme,Repeating,Strong,Industrial Gas,Silent Natural
+Star_27,0.74,1.69,8,1,Very High,Irregular,Weak,Industrial Gas,Silent Natural
+Star_28,4.18,0.89,11,3,Very High,None,Strong,Natural O₂,Signal Ghosts
+Star_29,0.77,0.74,5,0,Medium,None,Strong,Unknown gas X,Silent Natural
+Star_30,5.46,1.69,2,3,Extreme,Irregular,Weak,Industrial Gas,Ruins (Megastructure)
+Star_31,0.74,1.47,8,3,Extreme,None,Moderate,None,Signal Ghosts
+Star_32,7.44,1.16,1,3,Very High,Irregular,None,Unknown gas X,Silent Natural
+Star_33,8.55,0.47,3,3,High,Repeating,Weak,Unknown gas X,Ruins (Megastructure)
+Star_34,8.37,0.27,7,2,Low,Irregular,Moderate,Methane Spike,Ruins (Megastructure)
+Star_35,1.33,1.49,3,0,Medium,Weak,Strong,Methane Spike,Industrial Afterglow
+Star_36,10.22,1.42,3,1,High,Weak,Weak,Unknown gas Y,Silent Natural
+Star_37,0.88,1.03,5,2,Medium,Repeating,Strong,Natural O₂,Signal Ghosts
+Star_38,5.55,1.5,12,0,Medium,Weak,None,None,Signal Ghosts
+Star_39,9.09,0.25,7,0,Very High,Weak,Weak,CO₂ Excess,Signal Ghosts
+Star_40,3.37,0.34,3,1,Medium,Repeating,Strong,None,Ruins (Megastructure)
+Star_41,2.73,1.97,12,0,Medium,Irregular,None,Unknown gas Y,Signal Ghosts
+Star_42,5.32,1.23,12,2,Low,None,Strong,None,Silent Natural
+Star_43,5.37,1.24,6,2,High,Weak,Strong,Fluorocarbons,Industrial Afterglow
+Star_44,10.21,0.7,2,1,High,Repeating,Weak,Methane Spike,Industrial Afterglow
+Star_45,1.31,1.74,11,2,Low,None,Weak,Unknown gas Y,Industrial Afterglow
+Star_46,6.25,1.71,9,1,Low,None,None,Unknown gas X,Silent Natural
+Star_47,9.94,1.12,9,1,High,None,Weak,Methane Spike,Silent Natural
+Star_48,9.67,1.09,9,1,Low,Repeating,None,Unknown gas Y,Ruins (Megastructure)
+Star_49,9.38,0.39,4,1,Low,Irregular,None,Unknown gas X,Silent Natural
+Star_50,10.94,0.62,0,2,High,None,Moderate,Unknown gas X,Ruins (Megastructure)
+Star_51,7.56,0.28,6,0,Medium,Weak,None,None,Signal Ghosts
+Star_52,11.66,1.46,6,1,Low,Repeating,None,Natural O₂,Ruins (Megastructure)
+Star_53,6.47,1.42,12,2,Medium,Weak,Weak,Unknown gas Y,Industrial Afterglow
+Star_54,2.4,1.87,0,3,Extreme,None,Weak,Fluorocarbons,Industrial Afterglow
+Star_55,8.71,0.84,6,2,Low,None,None,Fluorocarbons,Silent Natural
+Star_56,5.44,0.62,7,1,Extreme,Weak,Strong,CO₂ Excess,Silent Natural
+Star_57,0.93,1.07,10,0,Extreme,Repeating,Weak,CO₂ Excess,Ruins (Megastructure)
+Star_58,5.93,1.14,1,2,Very High,None,None,Unknown gas Y,Ruins (Megastructure)
+Star_59,8.48,1.37,2,2,Medium,None,None,None,Silent Natural
+Star_60,7.81,1.31,9,3,Medium,Irregular,None,Industrial Gas,Signal Ghosts
+Star_61,9.29,1.94,11,2,Medium,None,Strong,Unknown gas Y,Industrial Afterglow
+Star_62,2.19,1.43,12,3,Low,Irregular,Weak,Natural O₂,Silent Natural
+Star_63,9.41,1.94,1,2,Low,Irregular,Moderate,Natural O₂,Signal Ghosts
+Star_64,5.83,0.9,1,0,Low,Repeating,Moderate,Industrial Gas,Industrial Afterglow
+Star_65,7.96,1.63,9,0,High,None,Moderate,None,Silent Natural
+Star_66,8.71,1.72,2,1,Very High,Repeating,Strong,Industrial Gas,Industrial Afterglow
+Star_67,8.64,1.45,2,1,Low,Weak,None,CO₂ Excess,Signal Ghosts
+Star_68,10.0,0.72,3,2,Low,Irregular,Weak,Fluorocarbons,Ruins (Megastructure)
+Star_69,1.17,0.68,1,2,Very High,Weak,Weak,Methane Spike,Industrial Afterglow
+Star_70,9.62,1.72,4,0,High,Weak,Strong,Methane Spike,Silent Natural
+Star_71,3.99,0.99,2,3,Extreme,Weak,Weak,None,Industrial Afterglow
+Star_72,8.37,1.75,10,3,Medium,Weak,Moderate,Natural O₂,Industrial Afterglow
+Star_73,6.21,1.75,4,0,Medium,Irregular,Weak,Natural O₂,Signal Ghosts
+Star_74,8.55,1.47,1,0,Low,Irregular,Weak,Industrial Gas,Signal Ghosts
+Star_75,4.16,0.75,6,3,Very High,Irregular,Strong,Unknown gas Y,Ruins (Megastructure)
+Star_76,7.72,0.73,0,2,Low,Weak,Weak,None,Silent Natural
+Star_77,6.35,0.74,12,1,Very High,Repeating,None,Unknown gas Y,Ruins (Megastructure)
+Star_78,4.29,1.59,1,0,Very High,Repeating,None,None,Industrial Afterglow
+Star_79,1.49,1.06,4,0,Very High,Repeating,None,Unknown gas Y,Silent Natural
+Star_80,7.43,0.49,1,1,High,Weak,Moderate,Unknown gas X,Silent Natural
+Star_81,8.17,0.48,8,3,High,Weak,Moderate,Methane Spike,Industrial Afterglow
+Star_82,9.15,1.47,6,1,Medium,None,Strong,Methane Spike,Signal Ghosts
+Star_83,10.38,0.77,7,3,High,Repeating,Moderate,CO₂ Excess,Industrial Afterglow
+Star_84,1.44,0.23,11,3,Very High,Irregular,Moderate,None,Industrial Afterglow
+Star_85,6.39,0.54,9,2,Extreme,None,Weak,Fluorocarbons,Signal Ghosts
+Star_86,1.03,1.93,3,1,Very High,Irregular,Moderate,None,Silent Natural
+Star_87,10.96,1.86,9,2,Medium,Repeating,Strong,Unknown gas Y,Silent Natural
+Star_88,5.06,1.15,8,3,High,Weak,None,Unknown gas Y,Silent Natural
+Star_89,3.66,0.67,4,3,Extreme,Repeating,None,Industrial Gas,Silent Natural
+Star_90,5.01,0.72,12,0,Low,Weak,Weak,Unknown gas Y,Silent Natural
+Star_91,11.66,1.37,8,3,Medium,Irregular,Weak,Industrial Gas,Industrial Afterglow
+Star_92,1.54,0.58,5,0,Low,Irregular,Weak,Methane Spike,Ruins (Megastructure)
+Star_93,10.11,2.0,1,2,Medium,None,None,Industrial Gas,Signal Ghosts
+Star_94,0.6,1.95,8,0,High,None,None,Methane Spike,Silent Natural
+Star_95,6.58,0.45,3,3,Extreme,Repeating,Moderate,Unknown gas Y,Signal Ghosts
+Star_96,5.99,0.76,2,1,Extreme,Irregular,Moderate,Unknown gas Y,Signal Ghosts
+Star_97,6.09,0.44,5,3,High,Repeating,Strong,Unknown gas X,Silent Natural
+Star_98,6.37,1.73,10,0,High,Repeating,Moderate,Unknown gas X,Signal Ghosts
+Star_99,8.45,1.83,3,2,Extreme,Repeating,Moderate,None,Industrial Afterglow
+Star_100,1.06,0.59,8,2,Extreme,Weak,Strong,None,Industrial Afterglow
