@@ -19,7 +19,7 @@ st.set_page_config(page_title="🌌 Stellar Time Capsules", layout="wide")
 st.title("🔭 Stellar Time Capsules – Predicting Civilizational Echoes")
 
 # File Upload
-uploaded_file = st.file_uploader("Upload your dataset (CSV)", type="csv")
+uploaded_file = st.file_uploader("stellar_time_capsule", type="csv")
 
 if uploaded_file:
     data = pd.read_csv(uploaded_file)
@@ -115,3 +115,4 @@ if uploaded_file:
         sample = pd.DataFrame([input_data])
         prediction = best_model.predict(sample)[0]
         st.success(f"🔮 Predicted Echo Type: **{prediction}**")
+
