@@ -1,84 +1,104 @@
-# stellar_time_capsules_app.py
-
 import streamlit as st
 import pandas as pd
-import seaborn as sns
+import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import accuracy_score, classification_report
-from xgboost import XGBClassifier
-from imblearn.over_sampling import SMOTE
+import seaborn as sns
 
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
+
+# ---------------------------------------------------
 # Streamlit UI
-st.title("🌌 Stellar Time Capsules – Predicting Civilizational Echoes in Space")
+# ---------------------------------------------------
+st.set_page_config(page_title="Exoplanet Habitability Classifier", layout="wide")
+st.title("🪐 Exoplanet Habitability Classifier")
+st.write("Predict whether discovered exoplanets are **Habitable, Semi-Habitable, or Non-Habitable**")
 
-# Upload dataset
-st.sidebar.header("Upload Dataset")
-uploaded_file = st.sidebar.file_uploader("Upload your stellar_time_capsules.csv", type=["csv"])
+# ---------------------------------------------------
+# Dataset Upload
+# ---------------------------------------------------
+uploaded_file = st.file_uploader("Upload Kepler Dataset (CSV)", type="csv")
 
-if uploaded_file is not None:
-    data = pd.read_csv(uploaded_file)
-    st.write("### Preview of Dataset")
-    st.dataframe(data.head())
+if uploaded_file:
+    df = pd.read_csv(uploaded_file)
 
-    # Encode categorical columns
-    label_encoders = {}
-    for col in ['RadiationLevel', 'SignalAnomaly', 'InfraredExcess',
-                'ChemicalAnomaly', 'PredictedEchoType']:
-        if col in data.columns:
-            le = LabelEncoder()
-            data[col] = le.fit_transform(data[col].astype(str))
-            label_encoders[col] = le
+    st.subheader("🔭 Dataset Preview")
+    st.dataframe(df.head())
 
-    # Features and target
-    X = data.drop(columns=['PredictedEchoType', 'StarSystem'])
-    y = data['PredictedEchoType']
+    st.subheader("📊 Dataset Info")
+    st.write(f"Shape: {df.shape}")
+    st.write(df.dtypes)
 
-    # Handle imbalance
-    smote = SMOTE(random_state=42)
-    X_resampled, y_resampled = smote.fit_resample(X, y)
+    # ---------------------------------------------------
+    # Preprocessing (simplified demo version)
+    # ---------------------------------------------------
+    # Keep important columns (adjust depending on your Kaggle dataset schema)
+    features = ["koi_period", "koi_prad", "koi_teq", "koi_srad", "koi_steff"]
+    target = "koi_disposition"   # usually "CONFIRMED", "CANDIDATE", "FALSE POSITIVE"
 
-    # Train/test split
-    X_train, X_test, y_train, y_test = train_test_split(
-        X_resampled, y_resampled, test_size=0.2, random_state=42, stratify=y_resampled
-    )
+    df = df[features + [target]].dropna()
 
-    # XGBoost Classifier with GridSearch
-    param_grid = {
-        'n_estimators': [100, 200, 300],
-        'max_depth': [3, 5, 7],
-        'learning_rate': [0.01, 0.05, 0.1],
-        'subsample': [0.8, 1.0]
-    }
+    # Map target into habitability-like classes
+    df[target] = df[target].map({
+        "CONFIRMED": "Habitable",
+        "CANDIDATE": "Semi-Habitable",
+        "FALSE POSITIVE": "Non-Habitable"
+    })
 
-    xgb = XGBClassifier(use_label_encoder=False, eval_metric='mlogloss', random_state=42)
-    grid = GridSearchCV(xgb, param_grid, cv=3, scoring='accuracy', n_jobs=-1, verbose=0)
-    grid.fit(X_train, y_train)
+    X = df[features]
+    y = df[target]
 
-    best_model = grid.best_estimator_
+    # Split
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    # Predictions
-    y_pred = best_model.predict(X_test)
+    # ---------------------------------------------------
+    # Model Training
+    # ---------------------------------------------------
+    clf = RandomForestClassifier(n_estimators=200, random_state=42, class_weight="balanced")
+    clf.fit(X_train, y_train)
 
-    # Accuracy
-    acc = accuracy_score(y_test, y_pred)
-    st.subheader(f"✅ Improved Model Accuracy: {acc * 100:.2f}%")
+    # Predict
+    y_pred = clf.predict(X_test)
 
-    # Classification Report
-    st.write("### Classification Report")
-    target_names = label_encoders['PredictedEchoType'].classes_
-    st.text(classification_report(y_test, y_pred, target_names=target_names))
+    # ---------------------------------------------------
+    # Evaluation
+    # ---------------------------------------------------
+    st.subheader("🌌 Model Evaluation")
+    st.write("**Accuracy:**", accuracy_score(y_test, y_pred))
 
-    # Feature importance
-    st.write("### Feature Importance")
-    importances = best_model.feature_importances_
-    features = X.columns
+    st.text("Classification Report:")
+    st.text(classification_report(y_test, y_pred))
 
+    # Confusion Matrix
+    cm = confusion_matrix(y_test, y_pred, labels=clf.classes_)
     fig, ax = plt.subplots()
-    sns.barplot(x=importances, y=features, hue=features,
-                dodge=False, legend=False, ax=ax, palette="viridis")
+    sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=clf.classes_, yticklabels=clf.classes_, ax=ax)
+    plt.ylabel("True")
+    plt.xlabel("Predicted")
     st.pyplot(fig)
 
-else:
-    st.info("👆 Upload your dataset (`stellar_time_capsules.csv`) to get started.")
+    # ---------------------------------------------------
+    # Single Prediction
+    # ---------------------------------------------------
+    st.subheader("🔮 Try Your Own Exoplanet")
+
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        koi_period = st.number_input("Orbital Period (days)", min_value=0.1, max_value=1000.0, value=100.0)
+    with col2:
+        koi_prad = st.number_input("Planet Radius (Earth radii)", min_value=0.1, max_value=20.0, value=1.0)
+    with col3:
+        koi_teq = st.number_input("Equilibrium Temperature (K)", min_value=100.0, max_value=10000.0, value=288.0)
+
+    col4, col5 = st.columns(2)
+    with col4:
+        koi_srad = st.number_input("Stellar Radius (Solar radii)", min_value=0.1, max_value=10.0, value=1.0)
+    with col5:
+        koi_steff = st.number_input("Stellar Temperature (K)", min_value=2000.0, max_value=10000.0, value=5778.0)
+
+    if st.button("Predict Habitability"):
+        sample = np.array([[koi_period, koi_prad, koi_teq, koi_srad, koi_steff]])
+        pred = clf.predict(sample)[0]
+        st.success(f"Predicted Habitability: **{pred}**")
+
